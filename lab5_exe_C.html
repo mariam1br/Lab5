@@ -99,6 +99,7 @@ Description : DOM Elements.
 				</li>
 				<li><a href="#">About</a></li>
 				<li><a href="#">Contact</a></li>
+
 			</ul>
 		</nav>
 		<div class="container">
@@ -205,51 +206,63 @@ Description : DOM Elements.
 		</footer>
 		<script>
 			document.addEventListener('DOMContentLoaded', function afterRender() {
-                // Task 1: Set the text content of all elements with the class 'companyName' to "Your Name" and remove their borders
-                let companyNameElements = document.getElementsByClassName('companyName');
-                for (let element of companyNameElements) {
-                    element.textContent = "Mariam";
-                    element.style.border = "none";
-                }
-
-                // Task 2: Change the background color of the navigation bar
-                let navigationBar = document.querySelector('nav');
-                navigationBar.style.backgroundColor = "gray"; 
-
-                // Task 3: Hide the section titled 'What is full-stack?'
-                let fullStackQuestion = document.querySelector('article');
-                fullStackQuestion.style.display = "none";
-
-                // Task 4: Create a new <p> element with the text "This is a new paragraph" with red color and append it to the end of the 'About Us' section
-                let aboutUsSection = document.querySelector('section');
-                let newParagraph = document.createElement('p');
-                newParagraph.textContent = "This is a new paragraph";
-                newParagraph.style.color = "red";
-                aboutUsSection.appendChild(newParagraph);
-
-                // Task 5: Add placeholders to input elements based on their corresponding label IDs
-                let labels = document.querySelectorAll('label');
-                labels.forEach(label => {
-                    let inputId = label.getAttribute('for');
-                    let inputElement = document.getElementById(inputId);
-                    inputElement.placeholder = label.textContent;
-                
-				// Task 6: Set the src attribute of the image
-				documnet.getElementsByTagName('image').src=images/example.svg
-
-
-				// Task 7: Add a new item in the navigation menu
-
-
-				// Task 8: Change the submit button text upon clicking and make it disabled
-
-
-				// Task 9: Change the text color of each item in the 'Related Links' to green
-
-
-				// Task 10: Add a red solid border to the footer
+				// Task 1: Set the text content of all elements with the class 'companyName' to "Your Name" and remove their borders
+				let companyNameElements = document.getElementsByClassName('companyName');
+				for (let element of companyNameElements) {
+					element.textContent = "Mariam";
+					element.style.border = "none";
+				}
+		
+				// Task 2: Change the background color of the navigation bar
+				let navigationBar = document.querySelector('nav');
+				navigationBar.style.backgroundColor = "gray"; 
+		
+				// Task 3: Hide the section titled 'What is full-stack?'
+				let fullStackQuestion = document.querySelector('article');
+				fullStackQuestion.style.display = "none";
+		
+				// Task 4: Create a new <p> element with the text "This is a new paragraph" with red color and append it to the end of the 'About Us' section
+				let aboutUsSection = document.querySelector('section');
+				let newParagraph = document.createElement('p');
+				newParagraph.textContent = "This is a new paragraph";
+				newParagraph.style.color = "red";
+				aboutUsSection.appendChild(newParagraph);
+		
+				// Task 5: Add placeholders to input elements based on their corresponding label IDs
+				let labels = document.querySelectorAll('label');
+				labels.forEach(label => {
+					let inputId = label.getAttribute('for');
+					let inputElement = document.getElementById(inputId);
+					inputElement.placeholder = label.textContent;
 				});
+		
+				// Task 6: Set the src attribute of the image
+				document.querySelector('img').src = './images/example.svg';
+		
+				// Task 7: Add a new item in the navigation menu
+				let navMenu = document.querySelector('nav ul');
+				let newNavItem = document.createElement('li');
+				let newNavLink = document.createElement('a');
+				newNavLink.href = '#';
+				newNavLink.textContent = 'Blog';
+				newNavItem.appendChild(newNavLink);
+				navMenu.appendChild(newNavItem);
 			});
+		
+			// Task 8: Change the submit button text to "Submitted" and make it disabled
+			let submitButton = document.querySelector('input[type="button"]');
+			submitButton.value = 'Submitted';
+			submitButton.disabled = true;
+		
+			// Task 9: Change the text color of each item in the 'Related Links' to green
+			let relatedLinks = document.querySelectorAll('aside a');
+			relatedLinks.forEach(link => {
+				link.style.color = 'green';
+			});
+		
+			// Task 10: Add a red solid border to the footer
+			let footer = document.querySelector('footer');
+			footer.style.border = '2px solid red';
 		</script>
-	</body>
-</html>
+		</body>
+		</html>
