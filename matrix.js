@@ -97,7 +97,6 @@ function performOperation(operation) {
     }
 
     if (result) {
-        // Show the result in the 'matrix3' container
         showResult2D('The Result', 'matrix3', result);
     }
 }
